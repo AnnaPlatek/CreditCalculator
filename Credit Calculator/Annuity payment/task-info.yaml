@@ -105,6 +105,40 @@ files:
     if __name__ == '__main__':
         CreditCalcTest('creditcalc.creditcalc').run_tests()
   learner_created: false
+- name: creditcalc/creditcalc_copy.py
+  visible: true
+  text: |
+    credit_principal = 'Credit principal: 1000'
+    final_output = 'The credit has been repaid!'
+    first_month = 'Month 1: paid out 250'
+    second_month = 'Month 2: paid out 250'
+    third_month = 'Month 3: paid out 500'
+
+    # write your code here
+    print(credit_principal)
+    print(first_month)
+    print(second_month)
+    print(third_month)
+    print(final_output)
+  learner_created: true
+- name: creditcalc/creditcalc.py
+  visible: true
+  text: "# credit_principal = int(input('Enter the credit principal: '))\n# final_output\
+    \ = 'The credit has been repaid!'\n# first_month = 'Month 1: paid out 250'\n#\
+    \ second_month = 'Month 2: paid out 250'\n# third_month = 'Month 3: paid out 500'\n\
+    \n\n# print(credit_principal)\n# print(first_month)\n# print(second_month)\n#\
+    \ print(third_month)\n# print(final_output)\n\nimport math\n\ncredit_principal\
+    \ = int(input('Enter the credit principal: '))\nthing_to_calculate = input(\"\"\
+    \"What do you want to calculate? \ntype \"m\" - for count of months, \ntype \"\
+    p\" - for monthly payment: \"\"\")\nif thing_to_calculate == \"m\":\n    monthly_payment\
+    \ = int(input('Enter monthly payment: '))\n    count_of_months = round(credit_principal\
+    \ / monthly_payment)\n    print('It takes {0} month to repay the credit'.format(count_of_months))\n\
+    elif thing_to_calculate == \"p\":\n    count_of_months = int(input('Enter count\
+    \ of months: '))\n    monthly_payment = math.ceil(credit_principal / count_of_months)\n\
+    \    last_payment = credit_principal - (count_of_months - 1) * monthly_payment\n\
+    \    print(monthly_payment)\n    print('Your monthly payment = {0} with last month\
+    \ payment = {1}.'.format(monthly_payment, last_payment))\n\n"
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/90/stages/502/implement
-status: Unchecked
+status: Solved
 record: -1
