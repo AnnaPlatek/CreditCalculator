@@ -32,8 +32,6 @@ elif thing_to_calculate == "p":
     print('Your monthly payment = {0} with last month payment = {1}.'.format(monthly_payment, last_payment))
 
 # part 3
-import math
-
 to_calculate = input("""What do you want to calculate? 
 type "n" - for count of months, 
 type "a" - for annuity monthly payment,
