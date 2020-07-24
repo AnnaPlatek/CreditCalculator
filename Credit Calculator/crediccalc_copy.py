@@ -73,5 +73,3 @@ elif to_calculate == "p":
 
     credit_principal = math.ceil(monthly_payment / ((i * pow(1 + i, n)) / (pow(1 + i, n) - 1)))
     print(f'Your credit principal = {credit_principal}!')
-
-# part 4

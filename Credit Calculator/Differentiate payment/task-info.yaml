@@ -245,6 +245,59 @@ files:
     if __name__ == '__main__':
         CreditCalcTest('creditcalc.creditcalc').run_tests()
   learner_created: false
+- name: creditcalc/creditcalc_copy.py
+  visible: true
+  text: "# part 1\ncredit_principal = 'Credit principal: 1000'\nfinal_output = 'The\
+    \ credit has been repaid!'\nfirst_month = 'Month 1: paid out 250'\nsecond_month\
+    \ = 'Month 2: paid out 250'\nthird_month = 'Month 3: paid out 500'\n\n# write\
+    \ your code here\nprint(credit_principal)\nprint(first_month)\nprint(second_month)\n\
+    print(third_month)\nprint(final_output)\n\n# part 2\n\nimport math\n\ncredit_principal\
+    \ = int(input('Enter the credit principal: '))\nthing_to_calculate = input(\"\"\
+    \"What do you want to calculate? \ntype \"m\" - for count of months, \ntype \"\
+    p\" - for monthly payment: \"\"\")\nif thing_to_calculate == \"m\":\n    monthly_payment\
+    \ = int(input('Enter monthly payment: '))\n    count_of_months = round(credit_principal\
+    \ / monthly_payment)\n    print('It takes {0} month to repay the credit'.format(count_of_months))\n\
+    elif thing_to_calculate == \"p\":\n    count_of_months = int(input('Enter count\
+    \ of months: '))\n    monthly_payment = math.ceil(credit_principal / count_of_months)\n\
+    \    last_payment = credit_principal - (count_of_months - 1) * monthly_payment\n\
+    \    print(monthly_payment)\n    print('Your monthly payment = {0} with last month\
+    \ payment = {1}.'.format(monthly_payment, last_payment))\n"
+  learner_created: true
+- name: creditcalc/creditcalc.py
+  visible: true
+  text: "import math\n\n#credit_principal = int(input('Enter the credit principal:\
+    \ '))\n#thing_to_calculate = input(\"\"\"What do you want to calculate?\n#type\
+    \ \"m\" - for count of months,\n#type \"p\" - for monthly payment: \"\"\")\n#if\
+    \ thing_to_calculate == \"m\":\n#    monthly_payment = int(input('Enter monthly\
+    \ payment: '))\n#    count_of_months = round(credit_principal / monthly_payment)\n\
+    #    print('It takes {0} month to repay the credit'.format(count_of_months))\n\
+    #elif thing_to_calculate == \"p\":\n#    count_of_months = int(input('Enter count\
+    \ of months: '))\n#    monthly_payment = math.ceil(credit_principal / count_of_months)\n\
+    #    last_payment = credit_principal - (count_of_months - 1) * monthly_payment\n\
+    #    print(monthly_payment)\n#    print('Your monthly payment = {0} with last\
+    \ month payment = {1}.'.format(monthly_payment, last_payment))\n\nto_calculate\
+    \ = input(\"\"\"What do you want to calculate? \ntype \"n\" - for count of months,\
+    \ \ntype \"a\" - for annuity monthly payment,\ntype \"p\" - for credit principal:\
+    \ \n\"\"\")\n\nif to_calculate == \"n\":\n    credit_principal = int(input(\"\
+    Enter credit principal: \"))\n    monthly_payment = float(input(\"Enter monthly\
+    \ payment: \"))\n    credit_interest = float(input(\"Enter credit interest: \"\
+    ))\n    i = (credit_interest / 100) / 12\n    n = math.ceil(math.log(monthly_payment\
+    \ / (monthly_payment - i * credit_principal), 1 + i))\n    if n < 12:\n      \
+    \  n_str = str(n) + \" months\"\n    elif n == 12:\n        n_str = \"1 year\"\
+    \n    elif n > 12 and n % 12 == 0:\n        n_str = str(n // 12) + \" years\"\n\
+    \    else:\n        n_str = str(n // 12) + \" years and \" + str(n % 12) + \"\
+    \ months\"\n\n    print(f'You need {n_str} to repay this credit!')\n\nelif to_calculate\
+    \ == \"a\":\n    credit_principal = int(input(\"Enter credit principal: \"))\n\
+    \    n = int(input(\"Enter count of periods: \"))\n    credit_interest = float(input(\"\
+    Enter credit interest: \"))\n    i = (credit_interest / 100) / 12\n\n    monthly_payment\
+    \ = math.ceil(credit_principal * (i * pow(1 + i, n)) / (pow(1 + i, n) - 1))\n\
+    \    print(f'Your annuity payment = {monthly_payment}!')\n\nelif to_calculate\
+    \ == \"p\":\n    monthly_payment = float(input(\"Enter monthly payment: \"))\n\
+    \    n = int(input(\"Enter count of periods: \"))\n    credit_interest = float(input(\"\
+    Enter credit interest: \"))\n    i = (credit_interest / 100) / 12\n\n    credit_principal\
+    \ = math.ceil(monthly_payment / ((i * pow(1 + i, n)) / (pow(1 + i, n) - 1)))\n\
+    \    print(f'Your credit principal = {credit_principal}!')\n\n"
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/90/stages/503/implement
 status: Unchecked
 record: -1
